@@ -10,8 +10,9 @@
 
 # 🚧 Alpha Status
 
-**Current Phase:** Active Alpha Testing
 // Note current published version is an older one so it may not have all features
+
+**Current Phase:** Active Alpha Testing
 CORSPRITE is currently undergoing intensive development focused on:
 
 - C++ rendering stability
