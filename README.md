@@ -1,27 +1,31 @@
 <p align="center">
   <img src="/logo/logo_banner_beta.png" alt="CORSPRITE Logo" width="480" />
 </p>
-
 <p align="center">
 <strong>An interactive assistant engineered to feel native, alive, and unmistakably yours.</strong>
 </p>
 
+<p align="center">
+<b>Current builds target Windows x64 architecture.</b>
+</p>
+
 ---
+# 🖥 Supported Platforms
 
-# 🚧 Alpha Status
+Currently tested on:
 
-// Note current published version is an older one so it may not have all features
+- Windows 11 (x64)
 
-**Current Phase:** Active Alpha Testing
-CORSPRITE is currently undergoing intensive development focused on:
+⚠️ **Architecture Notice**
 
-- C++ rendering stability
-- Python communication layer
-- Rust system bridge
-- memory handling & threading
-- Vulkan / OpenGL backend testing
+The current public build is compiled for **64-bit (x86_64) systems only**.
 
-Public builds will be released once the system achieves a **90%+ stability benchmark** across test environments.
+32-bit Windows systems are **not supported**.
+
+Planned platforms:
+
+- Linux (x64)
+- Windows (X32-bit)
 
 ⚠️ **Important**
 
@@ -34,11 +38,15 @@ Public builds will be released once the system achieves a **90%+ stability bench
 
 Full documentation is available during beta:
 
-Docs  
+Docs (Temporary link):
 https://corsprite-docs.vercel.app/
 
-Development updates  
+Development updates:  
 https://www.youtube.com/@CORSPRITE
+
+Made possible thanks to: 
+https://github.com/nlohmann/json/tree/develop
+https://github.com/ocornut/imgui
 
 ---
 
@@ -121,9 +129,13 @@ Recommended:
 - MSVC (future support)
 
 Verify installation:
-
 ```bash
 g++ --version
+```
+
+Compile app:
+```bash
+make
 ```
 
 ---
@@ -147,20 +159,25 @@ Enter the directory:
 cd CORSPRITE
 ```
 
----
-
-# 🛠 Build & Run
-
-Compile using **g++**:
+Verify installation:
 
 ```bash
-g++ -Wall src/main.cpp imgui.cpp imgui_draw.cpp imgui_tables.cpp imgui_widgets.cpp imgui_demo.cpp backends/imgui_impl_glfw.cpp backends/imgui_impl_opengl3.cpp -I. -Iinclude -Ibackends -lglfw3 -lopengl32 -lgdi32 -o app.exe
+g++ --version
 ```
+
+Compile app:
+
+```bash
+make
+```
+---
+
+# Run
 
 Run the application:
 
 ```bash
-app.exe
+Corsprite_luncher.exe
 ```
 
 ---
@@ -274,16 +291,6 @@ Examples below illustrate the current glyph coverage.
 
 ---
 
-# 🎤 Voice Support
-
-⚠️ Voice training is currently in progress.
-
-Voice datasets and models will be integrated in a later alpha stage.
-
-Sample voices will be published once the training pipeline is finalized.
-
----
-
 # 🔐 Security
 
 Current security work includes:
@@ -294,20 +301,6 @@ Current security work includes:
 - securing Python ↔ Rust communication
 
 Security audits are ongoing during alpha.
-
----
-
-# 🧪 Development Status
-
-| Module | Status |
-|------|------|
-| UI Renderer | Stable |
-| Font System | Stable |
-| Unicode Coverage | Stable |
-| Python Bridge | In Progress |
-| Rust Bridge | In Progress |
-| Voice Engine | Training |
-| Plugin System | Planned |
 
 ---
 
@@ -343,28 +336,6 @@ Expect:
 - unstable APIs
 
 Use at your own risk.
-
----
-
-# 🧭 Roadmap
-
-### Alpha
-- core UI
-- rendering
-- Unicode support
-- system architecture
-
-### Beta
-- voice engine
-- plugin system
-- scripting
-- stability improvements
-
-### Release
-- public builds
-- installer
-- documentation
-- customization tools
 
 ---
 
