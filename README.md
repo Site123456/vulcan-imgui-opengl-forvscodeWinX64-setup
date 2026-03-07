@@ -136,14 +136,19 @@ Corsprite_launcher.exe
 
 ---
 
-## 🔐 Security
+## 🔐 Security & Updates
 
 Active work includes:
 
+- securing Python ↔ Rust communication  
+- fixing auto installation for python directly from c++
+- bridge connection between Rust & C++
+- Audio to Text
+- Corsprite VD
 - sandboxing external inputs  
 - validating assistant commands  
-- securing Python ↔ Rust communication  
 
+Note: Python & Rust files will be uploaded only after fix
 ---
 
 ## 🔊 Audio Auto‑Detection
@@ -166,7 +171,7 @@ CORSPRITE includes an **automatic audio device detection system** designed to ma
 ### Current status
 - Auto‑detection is **enabled in alpha builds**  
 - Manual device selection UI is in development  
-- Advanced audio processing planned for beta  
+- Advanced audio processing (AEC, AGC, noise suppression) is planned for beta  
 
 ---
 
