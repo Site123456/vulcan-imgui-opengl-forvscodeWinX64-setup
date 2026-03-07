@@ -74,28 +74,64 @@ Install before building:
 - MinGW‑w64 / GCC 11+ (MSVC planned)
 
 Check compiler:
+
 ```bash
 g++ --version
-```
-
-Build:
-```bash
-make
 ```
 
 ---
 
 ## ⚙️ Installation
 
+### 1. Clone the repository
+
 ```bash
 git clone https://github.com/Site123456/CORSPRITE.git
 cd CORSPRITE
+```
+
+---
+
+### 2. Build (recommended)
+
+```bash
 make
 ```
 
-Run:
+This produces:
+
+```
+Corsprite_launcher.exe
+```
+
+---
+
+### 3. Manual build (advanced)
+
+If you prefer to compile manually without `make`, use the full command:
+
 ```bash
-Corsprite_luncher.exe
+g++ -Wall -I. -Iinclude -Ibackends \
+src/main.cpp \
+imgui.cpp imgui_draw.cpp imgui_tables.cpp imgui_widgets.cpp imgui_demo.cpp \
+backends/imgui_impl_glfw.cpp backends/imgui_impl_opengl3.cpp \
+-lglfw3 -lopengl32 -lgdi32 -ldxgi -ld3d11 -lole32 -luuid -lavrt -lwinmm \
+-o Corsprite_launcher.exe
+```
+
+This command:
+
+- Compiles all core ImGui sources  
+- Includes GLFW + OpenGL3 backends  
+- Links required Windows system libraries  
+- Produces the final executable  
+
+---
+
+### 4. Run the launcher
+
+```bash
+Corsprite_launcher.exe
 ```
 
 ---
@@ -116,21 +152,21 @@ CORSPRITE includes an **automatic audio device detection system** designed to ma
 
 ### What the system does
 - Detects available **microphones** at launch  
-- Monitors **device changes** in real time (USB plug/unplug, Bluetooth connect/disconnect)  
-- Automatically switches to the **active / highest‑priority** input device  
-- Prevents audio dropouts when devices are added or removed  
-- Ensures the assistant is always ready to listen without manual configuration  
+- Monitors **device changes** in real time  
+- Automatically switches to the **active / highest‑priority** input  
+- Prevents audio dropouts  
+- Ensures the assistant is always ready to listen  
 
 ### How it works internally
-- Uses a lightweight Rust bridge for **low‑latency device enumeration**  
-- Communicates with the Python logic layer for **voice activation**  
-- Exposes device state to the C++ UI for **live visual feedback**  
-- Supports future expansion (noise profiling, gain control, multi‑device routing)
+- Rust bridge for **low‑latency device enumeration**  
+- Python layer for **voice activation**  
+- C++ UI for **live visual feedback**  
+- Future‑ready for noise profiling, gain control, and routing  
 
 ### Current status
 - Auto‑detection is **enabled in alpha builds**  
 - Manual device selection UI is in development  
-- Advanced audio processing (AEC, AGC, noise suppression) is planned for beta  
+- Advanced audio processing planned for beta  
 
 ---
 
