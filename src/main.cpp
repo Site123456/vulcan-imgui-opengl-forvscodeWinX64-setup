@@ -390,6 +390,8 @@ int main()
     static bool interactiveMode = true;
     static bool followCursor    = false;
     static bool idleAnimations  = true;
+    
+    static int languageIndex = 0;
 
     std::ifstream file("assistant_config.json");
     if (file.is_open())
@@ -413,6 +415,7 @@ int main()
             if (a.contains("interactive_mode")) interactiveMode   = a["interactive_mode"];
             if (a.contains("follow_cursor"))    followCursor      = a["follow_cursor"];
             if (a.contains("idle_animations"))  idleAnimations    = a["idle_animations"];
+            if (a.contains("language"))  languageIndex    = a["language"];
         }
 
         // -----------------------------
@@ -515,8 +518,6 @@ int main()
         
         ImGui::BeginChild("Windowcontaindata", ImVec2(0, alertHeight), true);
         ImGui::Spacing();
-
-        static int languageIndex = 0;
 
         const char* languageOptions[] =
         {
@@ -702,6 +703,7 @@ int main()
             config["assistant"]["interactive_mode"] = interactiveMode;
             config["assistant"]["follow_cursor"]    = followCursor;
             config["assistant"]["idle_animations"]  = idleAnimations;
+            config["assistant"]["language"]          = languageIndex;
 
             // -----------------------------
             // INDICATOR SETTINGS
