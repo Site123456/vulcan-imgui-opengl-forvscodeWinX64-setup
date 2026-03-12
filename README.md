@@ -12,8 +12,6 @@
 
 <p align="center">
   <a href="https://docs.corsprite.com/"><img src="https://img.shields.io/badge/Docs-Beta-blue?style=for-the-badge"></a>
-  <a href="https://www.youtube.com/@CORSPRITE"><img src="https://img.shields.io/badge/YouTube-Updates-red?style=for-the-badge"></a>
-  <img src="https://img.shields.io/badge/Platform-Windows%2011%20x64-00adef?style=for-the-badge">
   <img src="https://img.shields.io/badge/Status-Alpha-orange?style=for-the-badge">
 </p>
 
